@@ -10,6 +10,17 @@
         <script src="{{ asset('js/app.js') }}"></script>
     </head>
     <body>
+	    @if (session()->has('message'))
+            <div class="alert alert-success">
+                {{ session('message') }}
+            </div>
+        @endif
+		<div class="contrainer mt-4"
+		<div>
+		<a href={{ route('articles.index') }}>Статьи</a>
+		<a href={{ route('articles.create') }}>Добавить статью</a>
+		</div>
+		</div>
         <div class="container mt-4">
             <h1>@yield('header')</h1>
             <div>
